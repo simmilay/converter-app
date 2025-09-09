@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF_8" />
+    <meta name="viewport" content="width=device_width, initial_scale=1.0" />
+    <title>Değiştir Dönüştür</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body style="background-color: #ffe7b1">
+
+    <header>
+      <div class="logoimg">
+        <img src="images/logo.png" alt="logo"  />
+      </div>
+    </header>
+
+    <div class="selected">
+      <div id="converter_choices">
+        <select name="choice" id="choice" onchange="setSelectionValue(this)">
+          <option value="lengths">Uzunluk</option>
+          <option value="weights">Ağırlık</option>
+          <option value="temperatures">Sıcaklık</option>
+          <option value="volumes">Hacim</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="all_converters">
+      <!--length_converter-->
+      <div class="converter_content" id="lengths">
+        <div class="duzen">
+          <input type="text" id="length_1_text" />
+          <select name="length_1" id="length_1_select">
+            <option value="metre">Metre</option>
+            <option value="cantimetre">Santimetre</option>
+            <option value="feet">Feet</option>
+            <option value="inc">İnç</option>
+          </select>
+
+          <br />
+          <br />
+
+          <input type="text" id="length_2_text" />
+          <select name="length_2" id="length_2_select">
+            <option value="metre">Metre</option>
+            <option value="cantimetre">Santimetre</option>
+            <option value="feet">Feet</option>
+            <option value="inc">İnç</option>
+          </select>
+        </div>
+      </div>
+
+      <!--weight_converter-->
+      <div class="converter_content" id="weights">
+        <input type="text" id="weight_1_text" />
+        <select name="weight_1" id="weight_1_select">
+          <option value="kilogram">Kilo</option>
+          <option value="gram">Gram</option>
+          <option value="pound">Pound</option>
+        </select>
+
+        <br />
+        <br />
+
+        <input type="text" id="weight_2_text" />
+        <select name="weight_2" id="weight_2_select">
+          <option value="kilogram">Kilo</option>
+          <option value="gram">Gram</option>
+          <option value="pound">Pound</option>
+        </select>
+      </div>
+
+      <!--tepretature_converter-->
+      <div class="converter_content" id="temperatures">
+        <input type="text" id="temperature_1_text" />
+        <select name="temperature_1" id="temperature_1_select">
+          <option value="cantigrade">Santigrad</option>
+          <option value="fahrenheit">Fahrenayt</option>
+          <option value="kelvin">Kelvin</option>
+        </select>
+
+        <br />
+        <br />
+
+        <input type="text" id="temperature_2_text" />
+        <select name="temperature_2" id="temperature_2_select">
+          <option value="cantigrade">Santigrad</option>
+          <option value="fahrenheit">Fahrenayt</option>
+          <option value="kelvin">Kelvin</option>
+        </select>
+      </div>
+
+      <!--volume_converter-->
+      <div class="converter_content" id="volumes">
+        <input type="text" id="volume_1_text" />
+        <select name="volume_1" id="volume_1_select">
+          <option value="liter">Litre</option>
+          <option value="mililiter">Mililitre</option>
+          <option value="galon">Galon</option>
+        </select>
+
+        <br />
+        <br />
+
+        <input type="text" id="volume_2_text" />
+        <select name="volume_2" id="volume_2_select">
+          <option value="liter">Litre</option>
+          <option value="mililiter">Mililitre</option>
+          <option value="galon">Galon</option>
+        </select>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

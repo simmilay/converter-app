@@ -1,0 +1,116 @@
+/*Header-Desing*/
+
+header{
+    background-color: #ffb81c;
+    height: 120px;
+    margin: -8px;
+}
+
+
+.logoimg{
+    text-align: center;
+}
+
+.logoimg img{
+    width: 200px;
+    height: 200px;
+    box-shadow: #fee5bb;
+}
+
+
+/*First-Selected-desing*/
+#converter_choices{
+    padding:20px;
+    margin: 20px;
+    justify-items: center;
+    justify-self: center;
+}
+#converter_choices select{
+    background-color: #ffb81c;
+    color: white;
+    padding: 12px;
+    width: 300px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    text-align: center;
+    margin-top: 30%;
+}
+
+
+/*converters-Desing*/
+
+.all_converters{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.converter_content{
+    height:300px;
+    width: 450px;
+    background-color: #ffb81c;
+    padding:20px;
+    margin: 20px;
+    justify-items: center;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5%;
+}
+
+.converter_content select{
+    background-color: #fee5bb;
+    color: white;
+    padding: 12px;
+    width: 150px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    text-align: center;
+}
+
+.converter_content input{
+    background-color: #fee5bb;
+    color: white;
+    margin: 12px;
+    width: 250px;
+    height: 45px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+    text-align: center;
+    margin-top:65px ;
+}
+
+
+
+
+/*converters-displays*/
+#volumes{
+    display: none;
+}
+
+#temperatures{
+    display: none;
+}
+
+#weights{
+    display: none;
+}
+
+#lengths{
+    display: block;
+}
+    
