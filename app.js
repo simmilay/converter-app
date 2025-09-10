@@ -64,60 +64,111 @@ function convert_to_length() {
   const value_length_1 = dropdown_length_1.value;
   const value_length_2 = dropdown_length_2.value;
   var length_text_in = document.getElementById("length_1_text").value;
-  var length_text_out = document.getElementById("length_2_text").value.toString();
+  var length_text_out = document
+    .getElementById("length_2_text")
+    .value.toString();
 
+
+    //conversions with meters
   if (value_length_1 == "metre") {
     if (value_length_2 == "cantimetre") {
       //işlem formül yazılacak
-      var converter_result =parseFloat(length_text_in)*100;
-      if(!isNaN(converter_result)){
+      var converter_result = parseFloat(length_text_in) * 100;
+      if (!isNaN(converter_result)) {
         document.getElementById("length_2_text").value = converter_result;
       }
     } else if (value_length_2 == "feet") {
       //işlemi yazılacak
-      var converter_result = (parseFloat(length_text_in)*3.2808);
-      if(!isNaN(converter_result)){
-        document.getElementById("length_2_text").value = converter_result;  
+      var converter_result = parseFloat(length_text_in) * 3.2808;
+      if (!isNaN(converter_result)) {
+        document.getElementById("length_2_text").value = converter_result;
       }
-
     } else if (value_length_2 == "inc") {
       //işlemi yazılacak
-      var converter_result = (parseFloat(length_text_in)/0.0254);
-      if(!isNaN(converter_result)){
-        document.getElementById("length_2_text").value = converter_result; 
+      var converter_result = parseFloat(length_text_in) / 0.0254;
+      if (!isNaN(converter_result)) {
+        document.getElementById("length_2_text").value = converter_result;
       }
     } else {
-     // document.getElementById("length_text_out") = document.getElementById("length_text_in");
+      // document.getElementById("length_text_out") = document.getElementById("length_text_in");
+      document.getElementById("length_2_text").value = length_text_in;
     }
-  } else if (value_length_1 == "cantimetre") {
+  } 
+  //conversions with cantimeters
+  else if (value_length_1 == "cantimetre") {
     if (value_length_2 == "metre") {
       //işlem yazılacak
+      var converter_result = parseFloat(length_text_in) / 100;
+      if (!isNaN(converter_result)) {
+        document.getElementById("length_2_text").value = converter_result;
+      }
     } else if (value_length_2 == "feet") {
       //işlem yazılacak
+      var converter_result = parseFloat(length_text_in) * 30.48;
+      if (!isNaN(converter_result)) {
+        document.getElementById("length_2_text").value = converter_result;
+      }
     } else if (value_length_2 == "inc") {
-      //işlwm yazılacak
+      //işlem yazılacak
+      var converter_result = parseFloat(length_text_in) * 0.39370079;
+      if (!isNaN(converter_result)) {
+        document.getElementById("length_2_text").value = converter_result;
+      }
     } else {
       //cantimetre yazılacak
+      document.getElementById("length_2_text").value = length_text_in;
+
     }
-  } else if (value_length_1 == "feet") {
+  } 
+  //conversions with feet
+  else if (value_length_1 == "feet") {
     if (value_length_2 == "metre") {
       //işlem yazılacak
+ var converter_result = parseFloat(length_text_in) / 3.2808;
+      if (!isNaN(converter_result)) {
+        document.getElementById("length_2_text").value = converter_result;
+      }
     } else if (value_length_2 == "cantimetre") {
       //işlem yazılacak
+       var converter_result = parseFloat(length_text_in) * 30.48;
+      if (!isNaN(converter_result)) {
+        document.getElementById("length_2_text").value = converter_result;
+      }
     } else if (value_length_2 == "inc") {
       //işlem yazılacak
+      var converter_result = parseFloat(length_text_in) * 12;
+      if (!isNaN(converter_result)) {
+        document.getElementById("length_2_text").value = converter_result;
+      }
     } else {
       //feet yazılacak
+      document.getElementById("length_2_text").value = length_text_in;
     }
-  }else if (value_length_1 == "inc") {
+  }
+  //conversions with inc
+  else if (value_length_1 == "inc") {
     if (value_length_2 == "metre") {
       //işlem yazılacak
+      var converter_result = parseFloat(length_text_in) * 0.0254;
+      if (!isNaN(converter_result)) {
+        document.getElementById("length_2_text").value = converter_result;
+      }
     } else if (value_length_2 == "cantimetre") {
       //işlem yazılacak
+      var converter_result = parseFloat(length_text_in) / 0.39370079;
+      if (!isNaN(converter_result)) {
+        document.getElementById("length_2_text").value = converter_result;
+      }
     } else if (value_length_2 == "feet") {
       //işlem yazılacak
+      var converter_result = parseFloat(length_text_in) / 12;
+      if (!isNaN(converter_result)) {
+        document.getElementById("length_2_text").value = converter_result;
+      }
     } else {
       //inc yazılacak
+      document.getElementById("length_2_text").value = length_text_in;
+
     }
   }
 }
