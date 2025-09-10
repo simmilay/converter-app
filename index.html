@@ -30,11 +30,11 @@
       <!--length_converter-->
       <div class="converter_content" id="lengths">
         <div class="duzen">
-          <input type="text" id="length_1_text" />
-          <select name="length_1" id="length_1_select">
+          <input type="text" id="length_1_text" onchange="convert_to_length()" oninput="convert_to_length()" />
+          <select name="length_1" id="length_1_select" onchange="convert_to_length()">
             <option value="metre">Metre</option>
             <option value="cantimetre">Santimetre</option>
-            <option value="feet">Feet</option>
+            <option value="feet">Fit</option>
             <option value="inc">İnç</option>
           </select>
 
@@ -42,7 +42,7 @@
           <br />
 
           <input type="text" id="length_2_text" />
-          <select name="length_2" id="length_2_select">
+          <select name="length_2" id="length_2_select" onchange="convert_to_length()">
             <option value="metre">Metre</option>
             <option value="cantimetre">Santimetre</option>
             <option value="feet">Feet</option>
