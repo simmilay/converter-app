@@ -1,9 +1,17 @@
 /*Header-Desing*/
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+body{
+    background-color: #fee5bb;
 
+}
 header{
     background-color: #ffb81c;
     height: 120px;
-    margin: -8px;
 }
 
 
@@ -20,9 +28,7 @@ header{
 
 /*First-Selected-desing*/
 #converter_choices{
-    padding:20px;
-    margin: 20px;
-    justify-items: center;
+
     justify-self: center;
 }
 #converter_choices select{
@@ -43,16 +49,17 @@ header{
 
 /*converters-Desing*/
 
-.all_converters{
+#converter_choices{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
 
-.converter_content{
+.container{
     height:300px;
     width: 450px;
+    display: grid;
     background-color: #ffb81c;
     padding:20px;
     margin: 20px;
@@ -64,10 +71,10 @@ header{
     border-radius: 5%;
 }
 
-.converter_content select{
+.convertArea select{
     background-color: #fee5bb;
-    color: white;
-    padding: 12px;
+/*     color: white;
+ */    padding: 12px;
     width: 150px;
     border: none;
     font-size: 20px;
@@ -76,9 +83,11 @@ header{
     appearance: button;
     outline: none;
     text-align: center;
+    color: #ffb81c;
+
 }
 
-.converter_content input{
+.convertArea input{
     background-color: #fee5bb;
     color: white;
     margin: 12px;
@@ -92,25 +101,4 @@ header{
     outline: none;
     text-align: center;
     margin-top:65px ;
-}
-
-
-
-
-/*converters-displays*/
-#volumes{
-    display: none;
-}
-
-#temperatures{
-    display: none;
-}
-
-#weights{
-    display: none;
-}
-
-#lengths{
-    display: block;
-}
-    
+}    
