@@ -21,6 +21,13 @@ const transformations = [
           return value * 39.37;
         },
       },
+       {
+        toKey: "Metre",
+        calculator: (value) => {
+          return value;
+        },
+      },
+      
     ],
   },
 
@@ -90,6 +97,12 @@ const transformations = [
           return (value * 2.20462);
         },
       },
+      {
+        toKey: "Kilogram",
+        calculator: (value) => {
+          return value;
+        },
+      },
     ],
   },
 
@@ -147,6 +160,12 @@ const transformations = [
           return (value * 9/5) + 32;
         },
       },
+      {
+        toKey: "Celcius",
+        calculator: (value) => {
+          return value;
+        },
+      },
     ],
   },
 
@@ -202,6 +221,12 @@ const transformations = [
         toKey: "Galon",
         calculator: (value) => {
           return value * 0.264172;
+        },
+      },
+      {
+        toKey: "Litre",
+        calculator: (value) => {
+          return value;
         },
       },
     ],

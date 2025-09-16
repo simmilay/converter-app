@@ -9,15 +9,20 @@ function rule() {
   const firstOption = document.getElementById("firstConverter").value;
   const secondOption = document.getElementById("secondConverter");
 
-  for(let i = 0; i < secondOption.options.length; i++){
+  for (let i = 0; i < secondOption.options.length; i++) {
     const option = secondOption.options[i];
     const isSame = option.value === firstOption;
-    option.disabled = isSame;  
+    option.disabled = isSame;
   }
 }
 function getToConverter(selectedElement) {
   const first_converter = document.getElementById("firstConverter");
   const second_converter = document.getElementById("secondConverter");
+  const input = document.getElementById("enteredValue");
+  const output = document.getElementById("result");
+
+  input.value = "";
+  output.value = "";
 
   first_converter.innerHTML = "";
   second_converter.innerHTML = "";
@@ -35,17 +40,33 @@ function getToConverter(selectedElement) {
 
     firstConverter.appendChild(option1);
     secondConverter.appendChild(option2);
-   
-    
   });
   rule();
-   first_converter.addEventListener("change", rule);
+  first_converter.addEventListener("change", rule);
 }
-
 
 //part of the tranformation
 
+function keyPressCheck(event) {
+  const kelvinSelection = document.getElementById("firstConverter");
+  const ksValue = kelvinSelection.value;
+
+  const entered  = document.getElementById("enteredValue");
+  const enteredValue = entered.value;
+  const valueIndex = enteredValue.length; 
+
+  console.log(event.key);
+  if (event.key == "-" && ksValue === "Kelvin") {
+    event.preventDefault();
+  }
+  if(event.key == "-" && valueIndex >= 1){
+    event.preventDefault();
+
+  }
+}
+
 function make_conversion() {
+
   const input = document.getElementById("enteredValue");
   var inputValue = input.value;
   const first_option = document.getElementById("firstConverter");
@@ -53,23 +74,27 @@ function make_conversion() {
   const second_option = document.getElementById("secondConverter");
   const second_optionValue = second_option.value;
 
-  //Kelvin exception
-  if (first_optionValue === "Kelvin" && inputValue < 0) {
-    alert("Kelvin Değeri sıfırdan küçük olmaz!");
-    input.value = "";
-    return;
-  }
 
   let cal = transformations
     .find((x) => x.fromKey == first_optionValue)
     .operation.find((c) => c.toKey == second_optionValue)
     .calculator(inputValue);
-  
+
   if (cal) {
     var converter_result = cal;
     document.getElementById("result").value = converter_result;
   }
-
 }
 
+function changeValue() {
+  const optionFirst = document.getElementById("firstConverter").value;
+  const optionSecond = document.getElementById("secondConverter").value;
+  document.getElementById("secondConverter").value = optionFirst;
+  document.getElementById("firstConverter").value = optionSecond;
 
+  const input = document.getElementById("enteredValue");
+  const output = document.getElementById("result");
+
+  input.value = "";
+  output.value = "";
+}
