@@ -7,7 +7,8 @@
 }
 body{
     background-color: #fee5bb;
-
+/*     background-image: URL("images/background-img.png");
+ */
 }
 header{
     background-color: #ffb81c;
@@ -89,7 +90,7 @@ header{
 
 .convertArea input{
     background-color: #fee5bb;
-    color: white;
+    color: #ffb81c;
     margin: 12px;
     width: 250px;
     height: 45px;

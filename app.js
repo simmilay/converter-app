@@ -1,12 +1,20 @@
-/*  import { transformations } from './formula.js'; */
-
+//dynamic selected menu
 const units = {
-  lengths: ["Metre", "Cantimetre", "Feet", "Inc"],
+  lengths: ["Metre", "Santimetre", "Feet", "Inc"],
   weights: ["Kilogram", "Gram", "Pound"],
   temperatures: ["Celcius", "Fahrenheit", "Kelvin"],
   volumes: ["Litre", "Mililitre", "Galon"],
 };
+function rule() {
+  const firstOption = document.getElementById("firstConverter").value;
+  const secondOption = document.getElementById("secondConverter");
 
+  for(let i = 0; i < secondOption.options.length; i++){
+    const option = secondOption.options[i];
+    const isSame = option.value === firstOption;
+    option.disabled = isSame;  
+  }
+}
 function getToConverter(selectedElement) {
   const first_converter = document.getElementById("firstConverter");
   const second_converter = document.getElementById("secondConverter");
@@ -27,36 +35,41 @@ function getToConverter(selectedElement) {
 
     firstConverter.appendChild(option1);
     secondConverter.appendChild(option2);
+   
+    
   });
+  rule();
+   first_converter.addEventListener("change", rule);
 }
-  console.log(transformations);
+
+
+//part of the tranformation
 
 function make_conversion() {
-  const input1 = document.getElementById("enteredValue");
-  var inputValue1 = input1.value;
-
+  const input = document.getElementById("enteredValue");
+  var inputValue = input.value;
   const first_option = document.getElementById("firstConverter");
   const first_optionValue = first_option.value;
   const second_option = document.getElementById("secondConverter");
-  /* const second_optionValue = second_option.value; */
- // const calculator  = transformations.find(unitsValue => unitsValue.)
+  const second_optionValue = second_option.value;
 
-  /* let cal = transformations.find(
-    (x) => x.fromKey == first_optionValue && x.toKey == second_optionValue
-  ).calculator;
-  if (cal) {
-    var converter_result = cal(parseFloat(inputValue1));
-    document.getElementById("result").value = converter_result;
-  } */
+  //Kelvin exception
+  if (first_optionValue === "Kelvin" && inputValue < 0) {
+    alert("Kelvin Değeri sıfırdan küçük olmaz!");
+    input.value = "";
+    return;
+  }
 
-    let cal = transformations.find(
-    (x) => x.fromKey == first_optionValue).operation.find((c) => c.toKey).calculator(inputValue1)
-    console.log(cal)
+  let cal = transformations
+    .find((x) => x.fromKey == first_optionValue)
+    .operation.find((c) => c.toKey == second_optionValue)
+    .calculator(inputValue);
+  
   if (cal) {
-    var converter_result = cal(parseFloat(inputValue1));
+    var converter_result = cal;
     document.getElementById("result").value = converter_result;
   }
 
-  console.log("result");
-
 }
+
+

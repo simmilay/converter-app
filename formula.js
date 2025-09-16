@@ -1,38 +1,10 @@
- const transformations = [
-
-    //Meter conversions
+const transformations = [
+  //Meter conversions
   {
     fromKey: "Metre",
-    toKey : "Cantimetre",
-    calculator: (value) => {
-          return value / 100;
-        },
-    /* operation: [
-      {
-        toKey: "Cantimetre",
-        
-      },
-      {
-        toKey: "Feet",
-        calculator: (value) => {
-          return value * 0.3048;
-        },
-      },
-      {
-        toKey: "Inc",
-        calculator: (value) => {
-          return value * 0.0254;
-        },
-      },
-    ], */
-  },
-
-  //Cantimeter conversions
-  {
-    fromKey: "Cantimetre",
     operation: [
       {
-        toKey: "Metre",
+        toKey: "Santimetre",
         calculator: (value) => {
           return value * 100;
         },
@@ -40,13 +12,38 @@
       {
         toKey: "Feet",
         calculator: (value) => {
-          return value * 30.48;
+          return value * 3.280839;
         },
       },
       {
         toKey: "Inc",
         calculator: (value) => {
-          return value * 2.54;
+          return value * 39.37;
+        },
+      },
+    ],
+  },
+
+  //Cantimeter conversions
+  {
+    fromKey: "Santimetre",
+    operation: [
+      {
+        toKey: "Metre",
+        calculator: (value) => {
+          return value *0.01;
+        },
+      },
+      {
+        toKey: "Feet",
+        calculator: (value) => {
+          return value * 0.0328;
+        },
+      },
+      {
+        toKey: "Inc",
+        calculator: (value) => {
+          return value * 0.3937;
         },
       },
     ],
@@ -54,24 +51,24 @@
 
   //Feet converisons
   {
-    fromKey: "Metre",
+    fromKey: "Feet",
     operation: [
       {
         toKey: "Cantimetre",
         calculator: (value) => {
-          return value * 0.032808;
+          return value * 30.48;
         },
       },
       {
         toKey: "Metre",
         calculator: (value) => {
-          return value * 3.2808;
+          return value * 0.3048;
         },
       },
       {
         toKey: "Inc",
         calculator: (value) => {
-          return value * 0.08333;
+          return value * 12;
         },
       },
     ],
@@ -82,15 +79,15 @@
     fromKey: "Kilogram",
     operation: [
       {
-        toKey: "gram",
+        toKey: "Gram",
         calculator: (value) => {
-          return value / 1000;
+          return value *1000;
         },
       },
       {
         toKey: "Pound",
         calculator: (value) => {
-          return value * 0.453592;
+          return (value * 2.20462);
         },
       },
     ],
@@ -103,13 +100,13 @@
       {
         toKey: "Kilogram",
         calculator: (value) => {
-          return value * 1000;
+          return value * 0.001;
         },
       },
       {
         toKey: "Pound",
         calculator: (value) => {
-          return value * 453.5923;
+          return value * 0.00220462;
         },
       },
     ],
@@ -147,7 +144,7 @@
       {
         toKey: "Fahrenheit",
         calculator: (value) => {
-          return ((value - 32) * 5) / 9;
+          return (value * 9/5) + 32;
         },
       },
     ],
@@ -179,7 +176,7 @@
       {
         toKey: "Celcius",
         calculator: (value) => {
-          return (parseFloat(Value) * 9) / 5 + 32;
+          return (parseFloat(value) * 9) / 5 + 32;
         },
       },
       {
@@ -196,15 +193,15 @@
     fromKey: "Litre",
     operation: [
       {
-        fromKey: "Mililitre",
+        toKey: "Mililitre",
         calculator: (value) => {
-          return value / 1000;
+          return value * 1000;
         },
       },
       {
-        fromKey: "Galon",
+        toKey: "Galon",
         calculator: (value) => {
-          return value * 3.7854118;
+          return value * 0.264172;
         },
       },
     ],
@@ -217,7 +214,7 @@
       {
         toKey: "Litre",
         calculator: (value) => {
-          return value * 1000;
+          return value *0.001;
         },
       },
       {
