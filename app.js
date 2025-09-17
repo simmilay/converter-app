@@ -92,6 +92,9 @@ function changeValue() {
   document.getElementById("secondConverter").value = optionFirst;
   document.getElementById("firstConverter").value = optionSecond;
 
+
+
+
   const input = document.getElementById("enteredValue");
   const output = document.getElementById("result");
 
